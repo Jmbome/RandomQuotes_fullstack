@@ -60,8 +60,8 @@ function getRandomQuote(arr){
 ***/
 function printQuote(){
 const value = getRandomQuote(quotes); 
-let html='<P class="quotes">randomQuote.quote</p>'+
-             '<p class="source">quotes.source'
+let html=`<P class="quotes">${value.quote}</p>`+
+             `<p class="source">${value.source}`
   for( i=0; i< quotes.length; i++) {
   if (quotes[i].citation==true) {
     html+='<span class="citation">quotes.citation</span>'
