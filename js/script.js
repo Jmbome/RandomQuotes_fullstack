@@ -47,6 +47,7 @@ function getRandomQuote(arr){
   };
 }
 
+
 /***
  * `printQuote` function
 ***/
@@ -64,14 +65,31 @@ if (value.year) {
   
 };
 
-
 html+='</p>';
-document.getElementById('quote-box').innerHTML = html;
+document.getElementById('quote-box').innerHTML = html 
 }
-
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuote,false);
+document.getElementById('load-quote').addEventListener("click", random_bg_color,false);
+
+/**
+ * random color function
+ */
+
+function random_bg_color() {
+  let x = Math.floor(Math.random() * 256);
+  let y = Math.floor(Math.random() * 256);
+  let z = Math.floor(Math.random() * 256);
+  let bgColor =  `rgb( ${x}, ${y}, ${z} )`;
+  document.body.style.background = bgColor 
+}
+
+/**
+ * time interval set
+ */
+setInterval(printQuote, 5000);
+setInterval(random_bg_color, 5000);
